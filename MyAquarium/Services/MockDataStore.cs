@@ -33,8 +33,8 @@ namespace MyAquarium.Services
 
         public async Task<bool> SetTankAsFavourite(TankModel tank)
         {
-            TankModels.All(x => x.IsFavourite = false);
-            TankModels.Where(x => x.ID == tank.ID).Select(x => x.IsFavourite = true);
+            TankModels.Select(x => x.IsFavourite = false);
+            TankModels.Where(x => x.ID == tank.ID).FirstOrDefault(x => x.IsFavourite = true);
 
             return await Task.FromResult(true);
         }

@@ -4,8 +4,9 @@
              x:Class="MyAquarium.Views.TanksPage"
              Title="{Binding Title}"
              xmlns:local="clr-namespace:MyAquarium.ViewModels"  
-             xmlns:model="clr-namespace:MyAquarium.Models"  
-             x:Name="BrowseItemsPage">
+             xmlns:model="clr-namespace:MyAquarium.Models"
+             xmlns:controls="clr-namespace:MyAquarium.Controls" 
+             x:Name="BrowseTanksPage">
 
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Add" Command="{Binding AddItemCommand}" />
@@ -18,14 +19,7 @@
             <CollectionView.ItemTemplate>
                 <DataTemplate>
                     <StackLayout Padding="10" x:DataType="model:TankModel">
-                        <Label Text="{Binding Name}" 
-                            LineBreakMode="NoWrap" 
-                            Style="{DynamicResource ListItemTextStyle}" 
-                            FontSize="16" TextColor="Black"/>
-                        <Label Text="{Binding Description}" 
-                            LineBreakMode="NoWrap"
-                            Style="{DynamicResource ListItemDetailTextStyle}"
-                            FontSize="13" TextColor="Black"/>
+                        <controls:TankSummaryCard ID="{Binding ID}"/>
                         <StackLayout.GestureRecognizers>
                             <TapGestureRecognizer 
                                 NumberOfTapsRequired="1"

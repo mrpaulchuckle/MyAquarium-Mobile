@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MyAquarium.Controls.TankSummaryCard">
+  <ContentView.Content>
+        <Frame 
+            BackgroundColor="White"
+            BorderColor="DeepSkyBlue">
+            <Grid>
+                <StackLayout Grid.Row="1" Orientation="Horizontal" Spacing="0">
+                    <Label Text="{Binding Name, FallbackValue='No Name Set'}"/>
+                    <Image IsVisible="{Binding IsFavourite}" Source="Content/heart_Fill.svg" />
+                </StackLayout>
+                <!--<BoxView BackgroundColor="DeepSkyBlue"/>
+                <Label Text="{Binding Description, FallbackValue='No Description Set'}" />-->
+            </Grid>
+        </Frame>
+    </ContentView.Content>
+</ContentView>
